@@ -58,7 +58,19 @@ Started by GitHub push
 This confirms the webhook is working.
 
 8. Troubleshooting
-IssueReasonWebhook shows red cross (×)Wrong Payload URL or ngrok stoppedJenkins not triggeredBranch mismatch or wrong SCM config404 Not FoundMissing /github-webhook/ at end of URL403 ForbiddenCSRF protection; GitHub plugin missingngrok URL changedngrok restarted; must update in GitHub and Jenkins
+Issue
+Reason
+Webhook shows red cross (×)
+Wrong Payload URL or ngrok stopped
+Jenkins not triggered
+Branch mismatch or wrong SCM config
+404 Not Found
+Missing /github-webhook/ at end of URL
+403 Forbidden
+CSRF protection; GitHub plugin missing
+ngrok URL changed
+ngrok restarted; must update in GitHub and Jenkins
+
 9. Important Notes
 1. Webhook URL must always end with:
 2. /github-webhook/
@@ -261,6 +273,19 @@ COPY . /usr/share/nginx/html
 
 sudo docker build -t myserver .
 sudo docker run -d -p 80:80
+? FIX — Allow Port 9090 in AWS Security Group
+Follow these exact steps:
+1?? Go to AWS Console
+? EC2
+? Instances
+? Select your instance 18.234.148.127
+2?? Scroll down to Security section
+? Click your Security Group (blue link)
+3?? Go to Inbound Rules
+4?? Click Edit inbound rules
+5?? Add a new rule:
+TypePortSourceCustom TCP90900.0.0.0/0Then Save rules.
+
 
 go to instances and open ipv4 web
 
